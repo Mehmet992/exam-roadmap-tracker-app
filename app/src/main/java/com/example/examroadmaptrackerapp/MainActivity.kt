@@ -13,8 +13,8 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.examroadmaptrackerapp.data.AppDatabase
 import com.example.examroadmaptrackerapp.data.TrackerRepository
-import com.example.examroadmaptrackerapp.ui.theme.TrackerViewModelFactory
-import com.example.examroadmaptrackerapp.ui.theme.TrackerViewModel
+import com.example.examroadmaptrackerapp.viewModel.TrackerViewModelFactory
+import com.example.examroadmaptrackerapp.viewModel.TrackerViewModel
 import com.example.examroadmaptrackerapp.ui.theme.ExamRoadmapTrackerAppTheme
 
 class MainActivity : ComponentActivity() {
