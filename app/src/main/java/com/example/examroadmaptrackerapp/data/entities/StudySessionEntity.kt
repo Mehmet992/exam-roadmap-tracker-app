@@ -10,10 +10,10 @@ import androidx.room.ForeignKey
     tableName = "study_sessions",
     foreignKeys = [
         ForeignKey(
-            entity = SubjectEntity::class,
-            parentColumns = ["id"],
-            childColumns = ["subjectId"],
-            onDelete = ForeignKey.SET_NULL
+            entity = TopicEntity::class,
+            parentColumns = ["topicId"],
+            childColumns = ["topicId"],
+            onDelete = ForeignKey.CASCADE
         )
     ]
 )

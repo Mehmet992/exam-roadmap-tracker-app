@@ -5,9 +5,25 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.examroadmaptrackerapp.data.entities.SubjectEntity
+import com.example.examroadmaptrackerapp.data.entities.TopicEntity
+import com.example.examroadmaptrackerapp.data.entities.TaskEntity
+import com.example.examroadmaptrackerapp.data.entities.StudySessionEntity
+import com.example.examroadmaptrackerapp.data.entities.DailyLogEntity
+import com.example.examroadmaptrackerapp.data.entities.AnalysisReportEntity
 
 //Singleton Architecture
-@Database(entities = [SubjectEntity::class], version = 1, exportSchema = false)
+@Database(
+    entities = [
+        SubjectEntity::class,
+        TopicEntity::class,
+        TaskEntity::class,
+        StudySessionEntity::class,
+        DailyLogEntity::class,
+        AnalysisReportEntity::class
+    ],
+    version = 1,
+    exportSchema = false
+)
 abstract class AppDatabase: RoomDatabase() {
 
     abstract fun trackerDao(): TrackerDAO
