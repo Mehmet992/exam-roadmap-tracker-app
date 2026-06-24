@@ -11,6 +11,8 @@ import kotlinx.coroutines.flow.Flow
 class TrackerRepository(private val trackerDAO: TrackerDAO) {
     val allSubjects: Flow<List<SubjectEntity>> = trackerDAO.getAllSubjects()
 
+    fun getSubjectById(subjectId: Long): Flow<SubjectEntity?> = trackerDAO.getSubjectById(subjectId)
+
     suspend fun insertSubject(subject : SubjectEntity) {
         trackerDAO.insertSubject(subject)
     }

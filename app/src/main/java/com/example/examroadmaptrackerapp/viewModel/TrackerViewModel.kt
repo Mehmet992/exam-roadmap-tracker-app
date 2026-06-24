@@ -22,10 +22,17 @@ class TrackerViewModel(private val repository: TrackerRepository): ViewModel() {
         initialValue = emptyList()
     )
 
+    fun getTopicsForSubject(subjectId: Long) = repository.getAllTopicsOfASubject(subjectId)
+
+    fun getSubjectById(subjectId: Long) = repository.getSubjectById(subjectId)
+
     //Creates a new subject named given subjectName and adds to database
-    fun addSubject(subjectName: String) {
+    fun addSubject(subjectName: String, targetGrade: String? = null) {
         viewModelScope.launch {
-            val newSubject = SubjectEntity(name = subjectName)
+            val newSubject = SubjectEntity(
+                name = subjectName,
+                targetGrade = targetGrade
+            )
 
             repository.insertSubject(newSubject)
         }
@@ -52,6 +59,12 @@ class TrackerViewModel(private val repository: TrackerRepository): ViewModel() {
     fun deleteTopic(topic: TopicEntity) {
         viewModelScope.launch {
             repository.deleteTopic(topic)
+        }
+    }
+
+    fun updateTopic(topic: TopicEntity) {
+        viewModelScope.launch {
+            repository.insertTopic(topic) // REPLACE strategy handles update
         }
     }
 

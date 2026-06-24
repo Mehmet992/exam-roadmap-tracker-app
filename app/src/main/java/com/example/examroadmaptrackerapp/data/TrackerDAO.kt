@@ -49,6 +49,9 @@ interface TrackerDAO {
     @Query("SELECT * FROM subjects")
     fun getAllSubjects(): Flow<List<SubjectEntity>>
 
+    @Query("SELECT * FROM subjects WHERE subjectId = :subjectId")
+    fun getSubjectById(subjectId: Long): Flow<SubjectEntity?>
+
     @Query("SELECT * FROM topics WHERE subjectId = :subjectId")
     fun getTopicsBySubject(subjectId: Long): Flow<List<TopicEntity>>
 
