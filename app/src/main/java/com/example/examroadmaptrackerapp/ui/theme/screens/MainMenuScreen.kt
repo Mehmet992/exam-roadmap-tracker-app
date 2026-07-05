@@ -78,8 +78,7 @@ fun MainMenuScreen(viewModel: TrackerViewModel, navController: NavController) {
             modifier = Modifier.padding(innerPadding)
         ) {
             composable(BottomNavItem.Menu.route) {
-                // TODO: Ana Menü / Dashboard ekranı buraya gelecek
-                Text("Ana Menü Ekranı", modifier = Modifier.padding(16.dp))
+                DashboardScreen(viewModel = viewModel, navController = bottomNavController)
             }
             composable(BottomNavItem.Subjects.route) {
                 CoursesScreen(viewModel = viewModel, navController = navController)
